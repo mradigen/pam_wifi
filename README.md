@@ -5,9 +5,9 @@ This PAM module authorizes the user given the system is connected to a set SSID.
 ## Disclaimer:
 Just in case you don't already know why not to use this, anyone can rename their access point to be the same as the set SSID to authenticate against. (given the attacker knows the SSID you are authenticating against)
 
-The code is really bad, credits to my C proficiency
+The code is really bad, credits to my C proficiency.
 
-This was made for educational purposes and I might refine it in the future
+This was made for educational purposes and I might refine it in the future.
 
 ## Building
 ```sh
