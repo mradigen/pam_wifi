@@ -39,8 +39,3 @@ Set your desired SSID in `/etc/pam_wifi.conf`:
 touch /etc/pam_wifi.conf
 sudo echo "YOUR_SSID_HERE" > /etc/pam_wifi.conf
 ```
-
-## Building
-```sh
-make build
-```
