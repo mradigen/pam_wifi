@@ -21,21 +21,20 @@ sudo make install
 
 ## Usage
 
-Add the following line to your `/etc/pam.d/system-auth`:
+Add the following line to your `/etc/pam.d/sudo`:
 ```
 auth       sufficient                  pam_wifi.so
 ```
 
-Your final `/etc/pam.d/system-auth` might look like this:
+Your final `/etc/pam.d/sudo` might look like this:
 ```
--auth      [success=2 default=ignore]  pam_systemd_home.so
-auth       sufficient                  pam_wifi.so
-auth       [success=1 default=bad]     pam_unix.so          nullok
-auth       [default=die]               pam_faillock.so      authfail
+auth		sufficient	pam_wifi.so
+auth		include		system-auth
+account		include		system-auth
+session		include		system-auth
 ```
 
 Set your desired SSID in `/etc/pam_wifi.conf`:
 ```sh
-touch /etc/pam_wifi.conf
-sudo echo "YOUR_SSID_HERE" > /etc/pam_wifi.conf
+echo "YOUR_SSID_HERE" | sudo tee /etc/pam_wifi.conf
 ```
